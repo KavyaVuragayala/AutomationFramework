@@ -8,6 +8,8 @@ import static org.testng.Assert.assertTrue;
 
 public class AssertActions {
 
+    // testng assertions
+
     public void verifyResponseBody(String actual, String expected, String description){
         assertEquals(actual,expected,description);
     }

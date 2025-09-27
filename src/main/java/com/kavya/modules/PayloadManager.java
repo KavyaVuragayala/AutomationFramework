@@ -17,18 +17,6 @@ public class PayloadManager {
     // Serialization
      public String createPayloadBookingAsString(){
 
-         //        {
-//            "firstname" : "LUCKY",
-//                "lastname" : "Dutta",
-//                "totalprice" : 3000,
-//                "depositpaid" : true,
-//                "bookingdates" : {
-//            "checkin" : "2025-07-22",
-//                    "checkout" : "2025-07-27"
-//        },
-//            "additionalneeds" : "Breakfast"
-//        }
-
          Booking booking = new Booking();
          booking.setFirstname("Alexa");
          booking.setLastname("Hamela");
@@ -44,6 +32,19 @@ public class PayloadManager {
 
          System.out.println(booking);
          return gson.toJson(booking);
+
+         // gson.toJson(Booking) will return
+         //        {
+//            "firstname" : "LUCKY",
+//                "lastname" : "Dutta",
+//                "totalprice" : 3000,
+//                "depositpaid" : true,
+//                "bookingdates" : {
+//            "checkin" : "2025-07-22",
+//                    "checkout" : "2025-07-27"
+//        },
+//            "additionalneeds" : "Breakfast"
+//        }
      }
 
      public String createPayloadBookingAsWrongBody(){
@@ -55,7 +56,7 @@ public class PayloadManager {
 
          BookingDates bookingdates = new BookingDates();
          bookingdates.setCheckinDate("5025-02-01");
-         bookingdates.setCheckoutDate("5025-02-01");
+         bookingdates.setCheckoutDate("5025-02-04");
          booking.setBookingdates(bookingdates);
          booking.setAdditionalneeds("会意; 會意");
 
@@ -63,6 +64,8 @@ public class PayloadManager {
 
          return gson.toJson(booking);
      }
+
+     // valid booking with dynamic data
 
      public String createPayloadBookingFakerJS(){
 
@@ -92,6 +95,8 @@ public class PayloadManager {
     // DeSerialization
 
     public BookingResponse bookingResponseJava(String responseString) {
-        return gson.fromJson(responseString, BookingResponse.class);
+       gson = new Gson();
+       BookingResponse bookingResponse = gson.fromJson(responseString, BookingResponse.class);
+       return bookingResponse;
     }
 }

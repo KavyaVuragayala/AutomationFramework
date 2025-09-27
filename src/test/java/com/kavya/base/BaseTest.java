@@ -24,7 +24,7 @@ public class BaseTest {
 
     public AssertActions assertActions;
     public PayloadManager payloadManager;
-    public JsonPath jsonPath;
+    public JsonPath jsonPath;   // used for extraction
 
     @BeforeTest
     public void setup() {
