@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="APIAutomationFramworkATB13x">
         <classes>
-            <class name="com.kavya.tests.restfulbooker.crud.TestCreateBooking">
+            <class name="com.kavya.tests.restfulbooker.crud.TestCreateToken">
 
             </class>
         </classes>
